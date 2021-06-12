@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <h2>Score</h2>
+   <p class="score"></p>
+
+  	<h4 class="you"></h4>
+  		<p class="player"></p>
+
+	<h4 class="pc"></h4>
+		<p class="computer"></p>
+<script>
+
+let you = document.querySelector(".you");
+let pc = document.querySelector(".pc");
+
+function computerPlay(){
+
+ const computer = ["Rock", "Paper", "Scissors"]; 
+ const play = computer[Math.floor(Math.random()*computer.length)];
+
+  return play ;
+}
+
+
+
+
+
+function playRound() {
+
+
+let playerSelection = prompt ("Rock, paper or scissors?");
+let computerSelection = computerPlay();
+
+
+you.textContent = "Your choice: " + playerSelection;
+pc.textContent = "Computer's choice: " + computerSelection;
+
+
+if(playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors"){
+ 
+    alert("You must enter 'Rock,paper or scissors'");
+
+  } else{
+ if(playerSelection == "rock" && computerSelection == "Scissors"){
+    console.log("You Win ! rock beats scissors.");
+   
+  }
+ else if(playerSelection == "rock" && computerSelection == "Paper"){
+    console.log("You lose ! paper beats rock.");
+    
+  }
+ else if(playerSelection == "rock" && computerSelection == "Rock"){
+    console.log("It's a tie!");
+  }
+
+ else if(playerSelection == "paper" && computerSelection == "Scissors"){
+    console.log("You lose ! scissors beats paper.");
+    
+}
+
+ else if(playerSelection == "paper" && computerSelection == "Rock"){
+    console.log("You win ! paper beats rock.");
+   
+ }
+
+ else if(playerSelection == "paper" && computerSelection == "Paper"){
+    console.log("It's a tie !.");
+}
+
+ else if(playerSelection == "paper" && computerSelection == "Scissors"){
+    console.log("You lose ! scissors beats paper.");
+}
+
+else if(playerSelection == "scissors" && computerSelection == "Rock"){
+    console.log("You lose ! rock beats scissors.");
+}
+
+else if(playerSelection == "scissors" && computerSelection == "Paper"){
+    console.log("You win ! scissors beat paper.");
+}
+
+ else if(playerSelection == "scissors" && computerSelection == "Scissors"){
+    console.log("It's a tie !.");
+} 
+
+  }
+
+  
+}
+
+
+
+
+ 
+function game(){
+
+let score = document.querySelector(".score");
+
+for(let i = 1; i <= 1 ; i++){
+playRound();
+score.textContent = i;
+  
+  for(let i = 2; i<= 2 ; i++){
+  playRound();
+  console.log(i);
+  score.textContent = i;
+  
+    
+    for(let i = 3; i<= 3 ; i++){
+    playRound();
+    console.log(i);
+    score.textContent = i;
+  
+      for(let i = 4; i<= 4 ; i++){
+      playRound();
+      console.log(i);
+      score.textContent = i;
+  
+
+        for(let i = 5; i<= 5 ; i++){
+        playRound();
+        console.log(i);
+        score.textContent = i;
+  
+    }
+   }
+  }
+ }
+}
+
+
+
+}
+
+
+
+console.log(game());
+
+</script>
+</body>
+</html>
